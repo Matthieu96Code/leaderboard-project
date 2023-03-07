@@ -1,0 +1,45 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.main-content {
+  width: 40%;
+  margin: auto;
+  margin-top: 0;
+}
+
+#scores-refresh {
+  display: flex;
+}
+
+#refresh-btn {
+  margin: auto;
+}
+
+#scores-ul {
+  width: 100%;
+  border: solid black;
+  padding-left: 10px;
+}
+
+li {
+  list-style-type: none;
+  padding: 6px 0;
+}
+
+#name-score-form {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-elm {
+  margin-bottom: 14px;
+}
+
+#submit-btn {
+  align-self: flex-end;
+}
