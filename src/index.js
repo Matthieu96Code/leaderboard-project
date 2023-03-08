@@ -10,9 +10,16 @@ const callList = () => {
       populate(element.user, element.score);
     });
   });
-}
+};
 
 document.getElementById('refresh-btn').addEventListener('click', () => {
-  callList()
+  callList();
 });
 
+document.getElementById('submit-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  // console.log('hi');
+  const userName = document.getElementById('user-name').value;
+  const userScore = document.getElementById('user-score').value;
+  sendList(userName, userScore);
+});
