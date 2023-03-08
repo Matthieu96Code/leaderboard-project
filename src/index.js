@@ -1,7 +1,12 @@
 import './style.css';
 import populate from './module/populate';
 import store from './module/store';
+import getList from './module/getlist';
 
-store.forEach((element) => {
-  populate(element.userName, element.score, element.index);
+document.getElementById('submit-btn').addEventListener('click', () => {
+  getList().then((list) => {
+    list.result.forEach((element) => {
+      populate(element.user, element.score);
+    });
+  });
 });
