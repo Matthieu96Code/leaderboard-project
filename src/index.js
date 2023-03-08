@@ -21,4 +21,6 @@ document.getElementById('name-score-form').addEventListener('submit', (event) =>
   const userName = document.getElementById('user-name').value;
   const userScore = document.getElementById('user-score').value;
   sendList(userName, userScore);
+  document.getElementById('user-name').value = '';
+  document.getElementById('user-score').value = '';
 });
