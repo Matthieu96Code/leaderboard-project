@@ -6,7 +6,7 @@ import sendList from './module/sendlist';
 const callList = () => {
   document.getElementById('scores-ul').innerHTML = '';
   getList().then((list) => {
-    list.result.forEach((element) => {
+    list.result.reverse().forEach((element) => {
       populate(element.user, element.score);
     });
   });
