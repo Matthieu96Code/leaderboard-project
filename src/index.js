@@ -16,9 +16,8 @@ document.getElementById('refresh-btn').addEventListener('click', () => {
   callList();
 });
 
-document.getElementById('submit-btn').addEventListener('click', (event) => {
+document.getElementById('name-score-form').addEventListener('submit', (event) => {
   event.preventDefault();
-  // console.log('hi');
   const userName = document.getElementById('user-name').value;
   const userScore = document.getElementById('user-score').value;
   sendList(userName, userScore);
