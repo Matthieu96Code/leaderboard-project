@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: linear-gradient(LightBlue, LightCyan, MintCream);
+  background-image: linear-gradient(lightblue, lightcyan, mintcream);
   min-height: 100vh;
 }
 
@@ -23,7 +23,7 @@ main {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -40,7 +40,7 @@ main {
 }
 
 #recent-title {
-  margin: 3% 6px;;
+  margin: 3% 6px;
   color: rgb(49, 49, 49);
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   border-bottom: 2px solid blue;
@@ -61,7 +61,6 @@ main {
 }
 
 #scores-ul {
-  min-width: fit-content;
   border: 6px double darkblue;
   padding: 3px;
 }
@@ -122,13 +121,16 @@ li {
     flex-direction: row;
   }
 
-  #form-section {
-    order: 0;
+  .main-content {
+    margin: 0 3%;
     min-width: 40%;
   }
-  
-  .main-content {
-    margin: 0 6%;
-    min-width: 40%;
+
+  #form-section {
+    order: 0;
+    margin-right: 0;
+    min-width: 20%;
+    flex-grow: 1;
+    max-width: 40%;
   }
 }
