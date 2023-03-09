@@ -1,5 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#leaderboard-title {
+  margin: 6%;
+  color: red;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+  font-style: italic;
+  letter-spacing: 6px;
+}
+
 main {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
 }
@@ -29,6 +43,10 @@ li {
   padding: 6px 0;
 }
 
+#form-section {
+  order: -1;
+}
+
 #name-score-form {
   width: max-content;
   display: flex;
@@ -42,4 +60,15 @@ li {
 
 #submit-btn {
   align-self: flex-end;
+}
+
+@media screen and (min-width: 358px) {
+  main {
+    flex-direction: row;
+  }
+
+  #form-section {
+    order : 0
+  }
+  
 }
