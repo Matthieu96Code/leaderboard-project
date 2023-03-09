@@ -19,28 +19,46 @@ main {
 }
 
 .main-content {
-  width: 40%;
+  width: fit-content;
   margin: auto;
-  margin-top: 0;
 }
+
+/* recent scores */
 
 #scores-refresh {
   display: flex;
 }
 
+#recent-title {
+  margin: 6%;
+  color: rgb(49, 49, 49);
+  font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+  border-bottom: 2px solid red;
+}
+
 #refresh-btn {
+  font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+  font-weight: 700;
+  background-color: bisque;
   margin: auto;
+  padding: 2% 4%;
+  border-radius: 20%;
+}
+
+#refresh-btn:hover {
+  background-color: greenyellow;
 }
 
 #scores-ul {
-  width: 100%;
-  border: solid black;
-  padding-left: 10px;
+  width: fit-content;
+  border: 4px double black;
+  padding: 3px;
 }
 
 li {
   list-style-type: none;
   padding: 6px 0;
+  background-image: linear-gradient(white, rgb(250, 250, 250));
 }
 
 #form-section {
@@ -62,7 +80,7 @@ li {
   align-self: flex-end;
 }
 
-@media screen and (min-width: 358px) {
+@media screen and (min-width: 600px) {
   main {
     flex-direction: row;
   }
@@ -71,4 +89,8 @@ li {
     order : 0
   }
   
+  .main-content {
+    margin: 0 6%;
+    width: 40%;
+  }
 }
