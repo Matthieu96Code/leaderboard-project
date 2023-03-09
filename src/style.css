@@ -3,15 +3,24 @@
   padding: 0;
 }
 
+body {
+  background-image: linear-gradient(LightBlue, LightCyan, MintCream);
+  min-height: 100vh;
+}
+
 #leaderboard-title {
-  margin: 6%;
-  color: red;
+  width: fit-content;
+  margin: 6% 0 0 6%;
+  color: blue;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
   font-style: italic;
   letter-spacing: 6px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 main {
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -20,28 +29,31 @@ main {
 
 .main-content {
   margin: auto;
+  min-width: 80%;
 }
 
 /* recent scores */
 
 #scores-refresh {
   display: flex;
+  justify-content: space-around;
 }
 
 #recent-title {
-  margin: 6% 6px;
+  margin: 3% 6px;;
   color: rgb(49, 49, 49);
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid blue;
   white-space: nowrap;
 }
 
 #refresh-btn {
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   font-weight: 700;
-  background-color: rgb(250, 200, 200);
-  margin: auto;
-  padding: 2% 4%;
+  background-color: rgb(200, 200, 250);
+  padding: 5px 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #refresh-btn:hover {
@@ -49,21 +61,24 @@ main {
 }
 
 #scores-ul {
-  width: fit-content;
-  border: 6px double blue;
+  min-width: fit-content;
+  border: 6px double darkblue;
   padding: 3px;
 }
 
 li {
+  color: black;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   list-style-type: none;
-  padding: 6px 0;
-  background-image: linear-gradient(white, rgb(200, 200, 250));
+  padding: 14px 0;
+  border-bottom: dotted darkblue;
 }
 
 /* form */
 
 #form-section {
-  min-width: 40%;
+  min-width: 80%;
   border: 1px solid gray;
   order: -1;
 }
@@ -78,28 +93,28 @@ li {
 #add-title {
   color: rgb(49, 49, 49);
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
-  border-bottom: 2px solid rgb(250, 190, 190);
-  background-color: rgb(250, 200, 200);
+  border-bottom: 2px solid rgb(190, 190, 205);
+  background-color: rgb(200, 200, 250);
 }
 
 #name-score-form input {
   height: 28px;
-  background-color: rgb(250, 240, 240);
+  background-color: rgb(240, 240, 250);
   border: 1px solid gray;
   margin-bottom: 24px;
 }
-/* 
-.form-elm {
-  margin: 14px;
-} */
 
 #submit-btn {
   align-self: flex-end;
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   font-weight: 700;
-  background-color: rgb(250, 200, 200);
-  padding: 4px 6px;
+  background-color: rgb(200, 200, 255);
+  padding: 4px 24px;
   border: 1px solid gray;
+}
+
+#submit-btn:hover {
+  background-color: greenyellow;
 }
 
 @media screen and (min-width: 600px) {
