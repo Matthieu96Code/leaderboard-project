@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_populate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/populate */ \"./src/module/populate.js\");\n/* harmony import */ var _module_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/store */ \"./src/module/store.js\");\n\n\n\n\n_module_store__WEBPACK_IMPORTED_MODULE_2__[\"default\"].forEach((element) => {\n  (0,_module_populate__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(element.userName, element.score, element.index);\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_populate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/populate */ \"./src/module/populate.js\");\n/* harmony import */ var _module_getlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/getlist */ \"./src/module/getlist.js\");\n/* harmony import */ var _module_sendlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module/sendlist */ \"./src/module/sendlist.js\");\n\n\n\n\n\nconst callList = () => {\n  document.getElementById('scores-ul').innerHTML = '';\n  (0,_module_getlist__WEBPACK_IMPORTED_MODULE_2__[\"default\"])().then((list) => {\n    list.result.reverse().forEach((element) => {\n      (0,_module_populate__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(element.user, element.score);\n    });\n  });\n};\n\ndocument.getElementById('refresh-btn').addEventListener('click', () => {\n  callList();\n});\n\ndocument.getElementById('name-score-form').addEventListener('submit', (event) => {\n  event.preventDefault();\n  const userName = document.getElementById('user-name').value;\n  const userScore = document.getElementById('user-score').value;\n  (0,_module_sendlist__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(userName, userScore);\n  document.getElementById('user-name').value = '';\n  document.getElementById('user-score').value = '';\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/module/getlist.js":
+/*!*******************************!*\
+  !*** ./src/module/getlist.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Jj9fXS7AmfvECcMuKra1/scores/');\n  const list = await response.json();\n  return list;\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/module/getlist.js?");
 
 /***/ }),
 
@@ -130,13 +140,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/module/store.js":
-/*!*****************************!*\
-  !*** ./src/module/store.js ***!
-  \*****************************/
+/***/ "./src/module/sendlist.js":
+/*!********************************!*\
+  !*** ./src/module/sendlist.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([\n  {\n    userName: 'name1',\n    score: 100,\n    index: 1,\n  },\n  {\n    userName: 'name2',\n    score: 20,\n    index: 2,\n  },\n  {\n    userName: 'name3',\n    score: 50,\n    index: 3,\n  },\n  {\n    userName: 'name4',\n    score: 78,\n    index: 4,\n  },\n  {\n    userName: 'name5',\n    score: 125,\n    index: 5,\n  },\n\n]);\n\n\n//# sourceURL=webpack://to-do-list/./src/module/store.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addReturn = (obj) => {\n  const form = document.getElementById('name-score-form');\n  const result = document.createElement('p');\n  result.innerText = `${obj.result}`;\n  result.style.fontSize = '10px';\n  result.style.margin = '0';\n  form.appendChild(result);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((userName, userScore) => {\n  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Jj9fXS7AmfvECcMuKra1/scores/', {\n    method: 'POST',\n    body: JSON.stringify({\n      user: userName,\n      score: userScore,\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  })\n    .then((response) => response.json())\n    .then((json) => addReturn(json));\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/module/sendlist.js?");
 
 /***/ })
 

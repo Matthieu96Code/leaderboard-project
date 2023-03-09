@@ -1,7 +1,26 @@
 import './style.css';
 import populate from './module/populate';
-import store from './module/store';
+import getList from './module/getlist';
+import sendList from './module/sendlist';
 
-store.forEach((element) => {
-  populate(element.userName, element.score, element.index);
+const callList = () => {
+  document.getElementById('scores-ul').innerHTML = '';
+  getList().then((list) => {
+    list.result.reverse().forEach((element) => {
+      populate(element.user, element.score);
+    });
+  });
+};
+
+document.getElementById('refresh-btn').addEventListener('click', () => {
+  callList();
+});
+
+document.getElementById('name-score-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userName = document.getElementById('user-name').value;
+  const userScore = document.getElementById('user-score').value;
+  sendList(userName, userScore);
+  document.getElementById('user-name').value = '';
+  document.getElementById('user-score').value = '';
 });
