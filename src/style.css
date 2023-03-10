@@ -61,6 +61,8 @@ main {
 }
 
 #scores-ul {
+  height: 200px;
+  overflow: auto;
   border: 6px double darkblue;
   padding: 3px;
 }
