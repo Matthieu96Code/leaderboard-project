@@ -4,8 +4,14 @@
 }
 
 body {
-  background-image: linear-gradient(lightblue, lightcyan, mintcream);
+  /* background-image: linear-gradient(lightblue, lightcyan, mintcream); */
+  background-image: url(./img/vinayak-chetti-main-file.jpg);
+  background-size: cover;
+  background-repeat: repeat-x;
   min-height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #leaderboard-title {
