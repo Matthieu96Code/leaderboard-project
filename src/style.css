@@ -4,8 +4,13 @@
 }
 
 body {
-  background-image: linear-gradient(lightblue, lightcyan, mintcream);
+  background: url(./img/vinayak-chetti-main-file.jpg) bottom;
+  background-size: cover;
+  background-repeat: repeat-x;
   min-height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #leaderboard-title {
@@ -48,12 +53,14 @@ main {
 }
 
 #refresh-btn {
+  color: white;
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   font-weight: 700;
-  background-color: rgb(200, 200, 250);
+  background-color: rgb(80, 80, 231);
   padding: 5px 20px;
   margin-top: auto;
   margin-bottom: auto;
+  border: 1px solid gray;
 }
 
 #refresh-btn:hover {
@@ -61,6 +68,8 @@ main {
 }
 
 #scores-ul {
+  height: 200px;
+  overflow: auto;
   border: 6px double darkblue;
   padding: 3px;
 }
@@ -90,10 +99,10 @@ li {
 }
 
 #add-title {
-  color: rgb(49, 49, 49);
+  color: rgb(240, 233, 233);
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   border-bottom: 2px solid rgb(190, 190, 205);
-  background-color: rgb(200, 200, 250);
+  background-color: rgb(80, 80, 231);
 }
 
 #name-score-form input {
@@ -104,10 +113,11 @@ li {
 }
 
 #submit-btn {
+  color: white;
   align-self: flex-end;
   font-family: 'Lucida Sans Unicode', Arial, sans-serif;
   font-weight: 700;
-  background-color: rgb(200, 200, 255);
+  background-color: rgb(80, 80, 231);
   padding: 4px 24px;
   border: 1px solid gray;
 }
