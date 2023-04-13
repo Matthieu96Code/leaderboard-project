@@ -1,4 +1,4 @@
-# Awesome-books-project
+# Leaderboard
 
 <a name="readme-top"></a>
 
